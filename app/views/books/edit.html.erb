@@ -1,0 +1,12 @@
+<h1>Editing Book</h1>
+
+<%= form_with model: @book do |f| %>
+<lavel>Title</lavel>
+<label for="book title">Title</label>
+<kabel>Opinion</kabel>
+<label for="book opinion">Opinion</label>
+<%= f.submit "UpdateBox" %>
+
+<a herf = books_path>"back</a>
+"|"
+<a herf = book_path(:show)>"show</a>
