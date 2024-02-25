@@ -1,12 +1,15 @@
 class ApplicationController < ActionController::Base
+    before_action :authenticate_user!, except: [:top]
     before_action :configure_permitted_parameters, if: :devise_controller?
 
 # sign inしたときの遷移先
   def after_sign_in_path_for(resource)
+    flash[:notice] = "Signed in successfully."
     users_path
   end
 
   def after_sign_out_path_for(resource)
+    flash[:notice] = "Signed out successfully."
     root_path
   end
 

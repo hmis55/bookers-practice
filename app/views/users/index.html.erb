@@ -1,6 +1,18 @@
 <main>
 <h2>User info </h2>
 
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <!--User infoの表示部分 -->
 <table>
  <tbody>
