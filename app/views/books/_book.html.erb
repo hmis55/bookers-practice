@@ -1,21 +1,20 @@
 <main>
-<h2>User info </h2>
-<h2>
- <%= flash[:notice] %>
-</h2>
-
-<% if book.errors.any? %>
+  <p id="notice"><%= flash[:notice] %></p>
+  <div class='container px-5 px-sm-0'>
+    <div class='row'>
+      <div class='col-md-3'>
+        <h2>User info</h2>
+  <% if book.errors.any? %>
 　　<%= book.errors.count %> errors prohibited this book from being saved:
-　<ul>
+　 <ul>
 　  <% book.errors.full_messages.each do |message| %>
 　   <li><%= message %></li>
-<% end %>
-  </ul>
-<%end%>
+  <% end %>
+   </ul>
+  <%end%>
 
 <!--User infoの表示部分 -->
 <table>
- <tbody>
    <tr><th><%= image_tag user.get_profile_image(100,100) %></th></tr>
    <tr>
    <th>name</th>
@@ -26,15 +25,16 @@
    <th><%= user.introduction %></th>
    <tr/>
    <tr>
-    <th>
-     <%= link_to "edit", edit_user_path(user) %>
-    </th>
-   </tr>
- </tbody>
-</table>
+ </table>
+    <div class='row'>
+      <a class="btn btn-outline-secondary btn-block" href="<%= edit_user_path(user) %>">
+         <i class="fas fa-user-cog"></i>
+      </a>
+    </div>
+
 
 <!--New bookの入力部分 -->
-  <h2>new book</h2>
+  <h2 class="mt-3">new book</h2>
 
   <%= form_with model: book do |f| %>
   　<label>Title</label>

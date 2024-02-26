@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 # sign inしたときの遷移先
   def after_sign_in_path_for(resource)
     flash[:notice] = "Signed in successfully."
-    users_path
+    users_path(current_user)
   end
 
   def after_sign_out_path_for(resource)
