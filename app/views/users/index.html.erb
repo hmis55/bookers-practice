@@ -1,38 +1,41 @@
-<main>
-<h2>User info </h2>
+<!--<main>-->
+<!--<h2>User info </h2>-->
 
-<div>
-  <%= flash[:notice] %>
-</div>
+<!--<div>-->
+<!--  <%= flash[:notice] %>-->
+<!--</div>-->
 
-<% if @user.errors.any? %>
-  <%= @user.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<!--<% if @user.errors.any? %>-->
+<!--  <%= @user.errors.count %>件のエラーが発生しました-->
+<!--  <ul>-->
+<!--    <% @user.errors.full_messages.each do |message| %>-->
+<!--      <li><%= message %></li>-->
+<!--    <% end %>-->
+<!--  </ul>-->
+<!--<% end %>-->
 <!--User infoの表示部分 -->
-<table>
- <tbody>
-   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>
-   <tr>
-   <th>name</th>
-   <th><%= @user.name %></th>
-   <tr/>
-   <tr>
-   <th>introduction</th>
-   <th><%= @user.introduction %></th>
-   <tr/>
-   <tr>
-    <th>
-     <%= link_to "edit", edit_user_path(@user) %>
-    </th>
-   </tr>
- </tbody>
-</table>
+<!--<table>-->
+<!-- <tbody>-->
+<!--   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>-->
+<!--   <tr>-->
+<!--   <th>name</th>-->
+<!--   <th><%= @user.name %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--   <th>introduction</th>-->
+<!--   <th><%= @user.introduction %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--    <th>-->
+<!--     <%= link_to "edit", edit_user_path(@user) %>-->
+<!--    </th>-->
+<!--   </tr>-->
+<!-- </tbody>-->
+<!--</table>-->
 
+
+<!--部分テンプレート-->
+<%= render 'books/book', book: @book,user: @user%>
 <!--New bookの入力部分 -->
   <h2>new book</h2>
   <%= form_with model: @book do |f| %>

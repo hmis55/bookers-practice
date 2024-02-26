@@ -1,48 +1,54 @@
-<main>
-<h2>User info </h2>
-<h2>
-    <%= flash[:notice] %>
-</h2>
+<!--<main>-->
+<!--<h2>User info </h2>-->
+<!--<h2>-->
+<!--    <%= flash[:notice] %>-->
+<!--</h2>-->
 
-<% if @book.errors.any? %>
-　　<%= @book.errors.count %> errors prohibited this book from being saved:
-　<ul>
-　<% @book.errors.full_messages.each do |message| %>
-　   <li><%= message %></li>
-  <% end %>
-  </ul>
-<%end%>
+<!--<% if @book.errors.any? %>-->
+<!--　　<%= @book.errors.count %> errors prohibited this book from being saved:-->
+<!--　<ul>-->
+<!--　<% @book.errors.full_messages.each do |message| %>-->
+<!--　   <li><%= message %></li>-->
+<!--  <% end %>-->
+<!--  </ul>-->
+<!--<%end%>-->
 
 <!--User infoの表示部分 -->
-<table>
- <tbody>
-   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>
-   <tr>
-   <th>name</th>
-   <th><%= @user.name %></th>
-   <tr/>
-   <tr>
-   <th>introduction</th>
-   <th><%= @user.introduction %></th>
-   <tr/>
-   <tr>
-    <th>
-     <%= link_to "edit", edit_user_path(@user) %>
-    </th>
-   </tr>
- </tbody>
-</table>
+<!--<table>-->
+<!-- <tbody>-->
+<!--   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>-->
+<!--   <tr>-->
+<!--   <th>name</th>-->
+<!--   <th><%= @user.name %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--   <th>introduction</th>-->
+<!--   <th><%= @user.introduction %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--    <th>-->
+<!--     <%= link_to "edit", edit_user_path(@user) %>-->
+<!--    </th>-->
+<!--   </tr>-->
+<!-- </tbody>-->
+<!--</table>-->
 
 <!--New bookの入力部分 -->
-  <h2>new book</h2>
+<!--  <h2>new book</h2>-->
   
-  <%= form_with model: @book do |f| %>
-  　<label>Title</label>
-  　<p><%= f.text_field :title %></p>
-  　<table>Opinion</table>
-  　<p><%= f.text_field :body %></p>
-  　<%= f.submit 'Create Book' %>
-  <% end %>
+<!--  <%= form_with model: @book do |f| %>-->
+<!--  　<label>Title</label>-->
+<!--  　<p><%= f.text_field :title %></p>-->
+<!--  　<table>Opinion</table>-->
+<!--  　<p><%= f.text_field :body %></p>-->
+<!--  　<%= f.submit 'Create Book' %>-->
+<!--  <% end %>-->
+
+
+<!--部分テンプレート-->
+<%= render 'book', book: @book,user: @user%>
+
+
 <!--Books の一覧部分-->
 
 <h2>Books</h2>

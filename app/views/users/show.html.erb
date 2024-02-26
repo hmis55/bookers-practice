@@ -1,36 +1,39 @@
-<main>
-<h2>User info </h2>
+<!--<main>-->
+<!--<h2>User info </h2>-->
 
 <!--User infoの表示部分 -->
-<table>
- <tbody>
-   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>
-   <tr>
-   <th>name</th>
-   <th><%= @user.name %></th>
-   <tr/>
-   <tr>
-   <th>introduction</th>
-   <th><%= @user.introduction %></th>
-   <tr/>
-   <tr>
-    <th>
-     <%= link_to "edit", edit_user_path(@user) %>
-    </th>
-   </tr>
- </tbody>
-</table>
+<!--<table>-->
+<!-- <tbody>-->
+<!--   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>-->
+<!--   <tr>-->
+<!--   <th>name</th>-->
+<!--   <th><%= @user.name %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--   <th>introduction</th>-->
+<!--   <th><%= @user.introduction %></th>-->
+<!--   <tr/>-->
+<!--   <tr>-->
+<!--    <th>-->
+<!--     <%= link_to "edit", edit_user_path(@user) %>-->
+<!--    </th>-->
+<!--   </tr>-->
+<!-- </tbody>-->
+<!--</table>-->
 
 <!--New bookの入力部分 -->
-  <h2>new book</h2>
-  <%= form_with model: @book do |f| %>
-  <label>Title</label>
-  <p><%= f.text_field :title %></p>
-  <table>Opinion</table>
- <p><%= f.text_field :text %></p>
+<!--  <h2>new book</h2>-->
+<!--  <%= form_with model: @book do |f| %>-->
+<!--  <label>Title</label>-->
+<!--  <p><%= f.text_field :title %></p>-->
+<!--  <table>Opinion</table>-->
+<!-- <p><%= f.text_field :text %></p>-->
 
-  <%= f.submit 'Create Book' %>
-  <% end %>
+<!--  <%= f.submit 'Create Book' %>-->
+<!--  <% end %>-->
+
+<!--部分テンプレート-->
+<%= render 'books/book', book: @book,user: @user%>
 
 <!-- userの登録履歴-->
 <table>
