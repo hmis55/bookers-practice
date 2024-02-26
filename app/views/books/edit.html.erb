@@ -4,7 +4,7 @@
 <label for="book title">Title</label><br>
 <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"タイトル"%><br>
 <label for="book opinion">Opinion</label><br>
-<%= f.text_field :opinion, autofocus: true, id:"inputOpinion", placeholder:"情報"%><br>
+<%= f.text_field :body, autofocus: true, id:"inputOpinion", placeholder:"情報"%><br>
 <%= f.submit "UpdateBox" %><br>
 
 <%= link_to "show", book_path(@book) %>

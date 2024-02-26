@@ -7,7 +7,7 @@
 <% if @book.errors.any? %>
 　　<%= @book.errors.count %> errors prohibited this book from being saved:
 　<ul>
-　<% @book.error.full_messages.each do |message| %>
+　<% @book.errors.full_messages.each do |message| %>
 　   <li><%= message %></li>
   <% end %>
   </ul>
@@ -16,13 +16,20 @@
 <!--User infoの表示部分 -->
 <table>
  <tbody>
-   <tr><%= image_tag @user.get_profile_image(100,100) %></tr>
+   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>
+   <tr>
    <th>name</th>
    <th><%= @user.name %></th>
    <tr/>
+   <tr>
    <th>introduction</th>
    <th><%= @user.introduction %></th>
    <tr/>
+   <tr>
+    <th>
+     <%= link_to "edit", edit_user_path(@user) %>
+    </th>
+   </tr>
  </tbody>
 </table>
 
@@ -49,7 +56,7 @@
  <tbody>
    <% @books.each do |book| %>
     <tr>
-      <td><%= image_tag @user.get_profile_image(100,100) %></td>
+      <td><%= link_to image_tag(@user.get_profile_image(100,100)),user_path(@user)%></td>
       <td><%= link_to book.title,book_path(book) %></td>
       <td><%= book.body %></td>
     </tr>

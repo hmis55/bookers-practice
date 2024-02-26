@@ -1,9 +1,9 @@
 class BooksController < ApplicationController
 
   def index
-  @user = current_user
-  @book = Book.new
-  @books = Book.all
+   @user = current_user
+   @book = Book.new
+   @books = Book.all
   end
 
   def create
@@ -13,8 +13,10 @@ class BooksController < ApplicationController
      flash[:notice] = "You have created book successfully."
      redirect_to book_path(@book)
     else
-     render :new
-　  end
+     @user = current_user
+     @books = Book.all
+     render :index
+    end
   end
 
   def show
@@ -32,6 +34,7 @@ class BooksController < ApplicationController
       flash[:notice] = "You have updated book successfully."
       redirect_to book_path(@book)
     else render :new
+    end
   end
 
   def destroy
