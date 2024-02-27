@@ -1,14 +1,21 @@
 <h1>Editing Book</h1>
 
-<%= form_with model: @book do |f| %>
-<label for="book title">Title</label><br>
-<%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"タイトル"%><br>
-<label for="book opinion">Opinion</label><br>
-<%= f.text_field :body, autofocus: true, id:"inputOpinion", placeholder:"情報"%><br>
-<%= f.submit "UpdateBox" %><br>
+<div class="container">
+   <div class="row">
+     <div class="col-sm-12 col-md-8 col-lg-5  mx-auto">
+       <%= form_with model: @book do |f| %>
+       <label for="book title">Title</label><br>
+       <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"タイトル"%><br>
+       
+       <label for="book opinion">Opinion</label><br>
+       <%= f.text_field :body, autofocus: true, id:"inputOpinion", placeholder:"情報"%><br>
+       <div></div>
+       <%= f.submit "UpdateBox" ,class:"btn-success"%><br>
 
-<%= link_to "show", book_path(@book) %>
-"|"
-<%= link_to "back", books_path(@book) %>
-
-<% end %>
+        <%= link_to "show", book_path(@book) %>
+        "|"
+        <%= link_to "back", books_path(@book) %>
+       <% end %>
+    </div>
+  </div>
+</div>
