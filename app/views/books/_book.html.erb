@@ -1,6 +1,6 @@
 <main>
   <h2>User info</h2>
-   <% if book.errors.any? %>
+      <% if book.errors.any? %>
      <%= book.errors.count %> errors prohibited this book from being saved:
     <ul>
      <% book.errors.full_messages.each do |message| %>
@@ -33,21 +33,19 @@
   <h2>New book</h2>
 
   <%= form_with model: book do |f| %>
-  <div class="form-group">
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title, class: "form-control book_title" %>
-</div>
+    <div class="form-group">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, class: "form-control book_title" %>
+    </div>
   　<!--<p><%= f.text_field :title %></p>-->
 
-  <div class="form-group">
-  <%= f.label :body, "Opinion" %>
-  <%= f.text_area :body, class: "form-control book_body" %>
-　</div>
-　
-  <div class="form-group">
-    <input type="submit" name="commit" value="Create Box" class="btn btn-success"
-     date-disable-with="Create Book">
-  </div>
-  <!--　<%= f.submit 'Create Book' %>-->
-  <!--<% end %>-->
-  </main>
+     <div class="form-group">
+       <%= f.label :body, "Opinion" %>
+　     <%= f.text_area :body, class: "form-control book_body" %>
+　   </div>
+
+     <div class="form-group">
+        <%= f.submit 'Create Book', class: "btn btn-success" %>
+    </div>
+  <% end %>
+</main>
