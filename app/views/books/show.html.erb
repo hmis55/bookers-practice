@@ -1,41 +1,8 @@
-<!--<main>-->
-<!--<h2>User info </h2>-->
-
-<!--User infoの表示部分 -->
-<!--<table>-->
-<!-- <tbody>-->
-<!--   <tr><th><%= image_tag @user.get_profile_image(100,100) %></th></tr>-->
-<!--   <tr>-->
-<!--   <th>name</th>-->
-<!--   <th><%= @user.name %></th>-->
-<!--   <tr/>-->
-<!--   <tr>-->
-<!--   <th>introduction</th>-->
-<!--   <th><%= @user.introduction %></th>-->
-<!--   <tr/>-->
-<!--   <tr>-->
-<!--    <th>-->
-<!--     <%= link_to "edit", edit_user_path(@user) %>-->
-<!--    </th>-->
-<!--   </tr>-->
-<!-- </tbody>-->
-<!--</table>-->
-
-<!--New bookの入力部分 -->
-<!--  <h2>new book</h2>-->
-<!--  <%= form_with model: @book do |f| %><br>-->
-<!--  <label>Title</label><br>-->
-<!--  <%= f.text_field :title %><br>-->
-<!--  <table>Opinion</table><br>-->
-<!--  <%= f.text_field :opinion %><br>-->
-<!--  <%= f.submit 'Create Book' %><br>-->
-<!--  <% end %>-->
-
 <!--部分テンプレート-->
 <div class="container px-5 px-sm-0">
  <div class="row">
      <div class="col-md-3">
-      <%= render 'book', book: @book,user: @user%>
+      <%= render 'book', book: @book_new,user: @user%>
      </div>
 
   <!-- book detail -->

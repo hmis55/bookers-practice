@@ -1,6 +1,6 @@
 <main>
   <h2>User info</h2>
-      <% if book.errors.any? %>
+    <% if book.errors.any? %>
      <%= book.errors.count %> errors prohibited this book from being saved:
     <ul>
      <% book.errors.full_messages.each do |message| %>
@@ -10,9 +10,10 @@
    <%end%>
 
 <!--User infoの表示部分 -->
-<table>
-  <%= image_tag user.get_profile_image(100,100) %>
-  <tbody>
+ <div class= "col -md-3">
+  <table>
+   <%= image_tag user.get_profile_image(100,100) %>
+   <tbody>
    <tr></tr>
    <ty>
      <th>name</th>
@@ -22,8 +23,8 @@
      <th>introduction</th>
      <th><%= user.introduction %></th>
    <tr/>
-  </tbody>
- </table>
+   </tbody>
+  </table>
     <div class='row'>
       <a class="btn btn-outline-secondary btn-block" href="<%= edit_user_path(user) %>">
          <i class="fas fa-user-cog"></i>
@@ -48,4 +49,5 @@
         <%= f.submit 'Create Book', class: "btn btn-success" %>
     </div>
   <% end %>
+  </div>
 </main>
